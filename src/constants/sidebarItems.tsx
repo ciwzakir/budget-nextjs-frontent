@@ -44,45 +44,6 @@ export const sidebarItems = (role: string) => {
     },
   ];
 
-  const commonAdminSidebarItems: MenuProps["items"] = [
-    {
-      label: <Link href={`/${role}/manage-student`}>Manage Students</Link>,
-      icon: <TableOutlined />,
-      key: `/${role}/manage-student`,
-    },
-    {
-      label: <Link href={`/${role}/manage-faculty`}>Manage Faculty</Link>,
-      icon: <TableOutlined />,
-      key: `/${role}/manage-faculty`,
-    },
-  ];
-
-  const adminSidebarItems: MenuProps["items"] = [
-    ...defaultSidebarItems,
-    ...commonAdminSidebarItems,
-    {
-      label: "Manage academic",
-      key: "manage-academic",
-      icon: <TableOutlined />,
-      children: [],
-    },
-    {
-      label: "Management",
-      key: "management",
-      icon: <AppstoreOutlined />,
-      children: [],
-    },
-  ];
-
-  const superAdminSidebarItems: MenuProps["items"] = [
-    ...defaultSidebarItems,
-    ...commonAdminSidebarItems,
-  ];
-
-  const facultySidebarItems: MenuProps["items"] = [...defaultSidebarItems];
-
-  const studentSidebarItems: MenuProps["items"] = [...defaultSidebarItems];
-
   const gqlUserSidebarItems: MenuProps["items"] = [
     ...defaultSidebarItems,
 
@@ -189,10 +150,6 @@ export const sidebarItems = (role: string) => {
   ];
 
   if (role === undefined) return <Loading></Loading>;
-  else if (role === USER_ROLE.SUPER_ADMIN) return superAdminSidebarItems;
-  else if (role === USER_ROLE.ADMIN) return adminSidebarItems;
-  else if (role === USER_ROLE.FACULTY) return facultySidebarItems;
-  else if (role === USER_ROLE.STUDENT) return studentSidebarItems;
   else if (role === USER_ROLE.GQL_USER) return gqlUserSidebarItems;
   else {
     return defaultSidebarItems;
