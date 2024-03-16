@@ -10,6 +10,7 @@ import { Avatar, Card, Col, Row, Spin, message } from "antd";
 import { useQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import { GETSINGLEPRODUCT } from "@/app/graphl/query/products/product";
 import Meta from "antd/es/card/Meta";
+import Image from "next/image";
 
 const SingleProduct = ({ params }: any) => {
   const productId = params.id;
@@ -32,7 +33,7 @@ const SingleProduct = ({ params }: any) => {
         <Card
           style={{ width: 600 }}
           cover={
-            <img alt="example" src={data?.singleProduct?.productImageUrl} />
+            <Image alt="example" src={data?.singleProduct?.productImageUrl} />
           }
           actions={[
             <SettingOutlined key="proceed to " />,

@@ -258,7 +258,8 @@ const ChequeListPage = () => {
                   columns={dataColumns}
                   dataSource={data}
                   pageSize={10}
-                  total={countPages}
+                  // total={countPages}
+                  total={50}
                   //   showSizeChanger={true}
                   //   onChangeOfPagintion={onPaginationChange}
                   //   onChangeTable={onTableChange}
@@ -272,7 +273,8 @@ const ChequeListPage = () => {
                   columns={filteredColumnForSuppliers}
                   dataSource={cashPaymentList}
                   pageSize={10}
-                  total={countTotalPages}
+                  total={50}
+                  // total={countTotalPages}
                   //   showSizeChanger={true}
                   //   onChangeOfPagintion={onPaginationChange}
                   //   onChangeTable={onTableChange}

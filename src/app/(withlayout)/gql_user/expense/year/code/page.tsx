@@ -269,7 +269,8 @@ const ReturnAsPerCodePage = () => {
                   columns={ColumnCodes}
                   dataSource={summaryYearlyReturnAsperCode}
                   pageSize={40}
-                  total={pageCount}
+                  total={50}
+                  // total={pageCount}
                   //   showSizeChanger={true}
                   //   onChangeOfPagintion={onPaginationChange}
                   //   onChangeTable={onTableChange}

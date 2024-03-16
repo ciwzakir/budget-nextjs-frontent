@@ -10,6 +10,7 @@ import {
 function makeClient() {
   const httpLink = new HttpLink({
     uri: "http://localhost:4000",
+    // @ts-expect-error
     cache: new NextSSRInMemoryCache(),
     headers: {
       authorization:

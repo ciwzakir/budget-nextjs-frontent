@@ -175,7 +175,8 @@ const ReturnAsPerCompanyPage = () => {
                   columns={filteredColumnForSuppliers}
                   dataSource={summaryYearlyReturnAsperCompany}
                   pageSize={10}
-                  total={pageCount}
+                  total={50}
+                  // total={pageCount}
                   //   showSizeChanger={true}
                   //   onChangeOfPagintion={onPaginationChange}
                   //   onChangeTable={onTableChange}

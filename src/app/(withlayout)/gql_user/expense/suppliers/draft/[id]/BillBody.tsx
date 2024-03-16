@@ -41,7 +41,7 @@ const BillBody = ({ data }: any) => {
 
           <tbody>
             <tr>
-              <td colSpan="5" className="text-center">
+              <td colSpan={5} className="text-center">
                 Expenditure incured on account of
                 <span style={{ margin: "0 3px" }}>
                   <strong>{expenditure_code?.heading}</strong>
@@ -57,13 +57,13 @@ const BillBody = ({ data }: any) => {
                 </span>
                 <span style={{ margin: "0 3px" }}>
                   {get_children_length > 1 ? "are" : "is"}
-                </span>{" "}
+                </span>
                 as bellow :
               </td>
             </tr>
             {transactions?.map((elements: any, index: number) => (
               <tr
-                elements={elements}
+                // elements={elements}
                 key={elements?.id}
                 className="text-center"
               >

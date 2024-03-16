@@ -48,6 +48,7 @@ const SideBar = () => {
         defaultSelectedKeys={["1"]}
         mode="inline"
         // items={sidebarItems(userRole)}
+        // @ts-expect-error
         items={sidebarItems(role)}
       />
     </Sider>

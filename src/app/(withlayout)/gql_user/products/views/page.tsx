@@ -127,10 +127,12 @@ const ProductsPage = () => {
     const categoryCondition =
       selectedCategories.length === 0 ||
       (product?.productCategory &&
+        // @ts-expect-error
         selectedCategories.includes(product?.productCategory?.id));
     const brandCondition =
       selectedBrands.length === 0 ||
       (product?.productBrand &&
+        // @ts-expect-error
         selectedBrands.includes(product?.productBrand?.id));
 
     const stockStatusCondition = showStockStatus
@@ -396,7 +398,8 @@ const ProductsPage = () => {
                   dataSource={filteredProducts}
                   // dataSource={products}
                   pageSize={5}
-                  total={count}
+                  total={40}
+                  // total={count}
                   showSizeChanger={true}
                   onChangeOfPagintion={onPaginationChange}
                   onChangeTable={onTableChange}

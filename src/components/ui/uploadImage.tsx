@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
 import { message, Upload } from "antd";
+// @ts-expect-error
 import type { GetProp, UploadProps } from "antd";
 import Image from "next/image";
 
@@ -9,14 +10,17 @@ type FileType = Parameters<GetProp<UploadProps, "beforeUpload">>[0];
 const getBase64 = (img: FileType, callback: (url: string) => void) => {
   const reader = new FileReader();
   reader.addEventListener("load", () => callback(reader.result as string));
+  // @ts-expect-error
   reader.readAsDataURL(img);
 };
 
 const beforeUpload = (file: FileType) => {
+  // @ts-expect-error
   const isJpgOrPng = file.type === "image/jpeg" || file.type === "image/png";
   if (!isJpgOrPng) {
     message.error("You can only upload JPG/PNG file!");
   }
+  // @ts-expect-error
   const isLt2M = file.size / 1024 / 1024 < 2;
   if (!isLt2M) {
     message.error("Image must smaller than 2MB!");

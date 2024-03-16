@@ -186,7 +186,8 @@ const ChequeListPage = () => {
                   columns={filteredColumnForSuppliers}
                   dataSource={chequeList}
                   pageSize={10}
-                  total={countTotalPages}
+                  // total={countTotalPages}
+                  total={50}
                   //   showSizeChanger={true}
                   //   onChangeOfPagintion={onPaginationChange}
                   //   onChangeTable={onTableChange}

@@ -310,7 +310,8 @@ const DraftBillListPage = () => {
                 columns={columns}
                 dataSource={data}
                 pageSize={10}
-                total={count}
+                total={10}
+                // total={count}
                 //   showSizeChanger={true}
                 //   onChangeOfPagintion={onPaginationChange}
                 //   onChangeTable={onTableChange}

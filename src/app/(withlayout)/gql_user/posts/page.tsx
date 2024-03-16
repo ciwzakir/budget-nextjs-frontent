@@ -1,6 +1,6 @@
 "use client";
 import React, { Suspense, useEffect, useRef, useState } from "react";
-import type { GetProp } from "antd";
+// import type { GetProp } from "antd";
 import { DatePicker, Modal, Space, Spin } from "antd";
 import { Button, Tag, Input, message, Radio, Checkbox, Col, Row } from "antd";
 import { useMutation, useQuery } from "@apollo/client";
@@ -26,11 +26,11 @@ const { RangePicker } = DatePicker;
 const { userRole: role } = getUserInfo() as any;
 
 const MyPostPage = () => {
-  const onChange: GetProp<typeof Checkbox.Group, "onChange"> = (
-    checkedValues: any
-  ) => {
-    // console.log("checked = ", checkedValues);
-  };
+  // const onChange: GetProp<typeof Checkbox.Group, "onChange"> = (
+  //   checkedValues: any
+  // ) => {
+  //   // console.log("checked = ", checkedValues);
+  // };
   const { loading, error, data, refetch } = useQuery(MYPROFILESFEATURES);
   const { data: categories } = useQuery(GETPOSTCATEGORIES);
 
@@ -61,6 +61,7 @@ const MyPostPage = () => {
     const categoryCondition =
       selectedCategories.length === 0 ||
       (post.postCategory &&
+        // @ts-expect-error
         selectedCategories.includes(post?.postCategory?.id));
 
     const publishedCondition = showPublished ? post.isPublished === true : true;

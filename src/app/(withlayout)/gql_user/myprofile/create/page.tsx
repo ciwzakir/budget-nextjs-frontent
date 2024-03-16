@@ -1,4 +1,5 @@
 "use client";
+import { getUserInfo } from "@/app/auth/auth.service";
 import { CREATE_PROFILE_GQL } from "@/app/graphl/mutations/muttion";
 import { MYPROFILESFEATURES } from "@/app/graphl/query/query";
 import StepperForm from "@/components/stepperForm/stepperForm";
@@ -15,7 +16,7 @@ import { useEffect } from "react";
 
 const CreateProfilePage = () => {
   const router = useRouter();
-  const role = USER_ROLE.GQL_USER;
+  const role = getUserInfo() as any;
   const [createprofile, { data, loading, error }] = useMutation(
     CREATE_PROFILE_GQL,
     {
@@ -103,13 +104,14 @@ const CreateProfilePage = () => {
     }
   };
   const { refetch } = useQuery(MYPROFILESFEATURES);
+
   useEffect(() => {
     if (data && data.createprofile.message) {
       message.success(data.createprofile.message);
       refetch();
       router.push(`/${role}/myprofile`);
     }
-  }, [data]);
+  }, [data, refetch]);
 
   return (
     <StepperForm

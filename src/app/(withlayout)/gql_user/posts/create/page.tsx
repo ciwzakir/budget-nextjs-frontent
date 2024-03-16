@@ -20,10 +20,11 @@ import {
 } from "@/validatorsSchema/posts/create";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { GETPOSTCATEGORIES } from "@/app/graphl/query/posts/posts";
+import { getUserInfo } from "@/app/auth/auth.service";
 
 const CreatePost = () => {
   const router = useRouter();
-  const role = USER_ROLE.GQL_USER;
+  const role = getUserInfo() as any;
   const [addpost, { data, loading, error }] = useMutation(ADD_POST, {
     refetchQueries: [{ query: MYPROFILESFEATURES }],
   });
