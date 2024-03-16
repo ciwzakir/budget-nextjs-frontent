@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
 import { USER_ROLE } from "@/constants/role";
-import { GETPOSTCATEGORIES } from "@/app/graphl/query/products/productCategory";
+import { GETPOSTCATEGORIES } from "@/app/graphl/query/posts/posts";
 
 const ADD_NEW_CAT = gql`
   mutation addNewCat($inputs: PostCategoryPayload) {
