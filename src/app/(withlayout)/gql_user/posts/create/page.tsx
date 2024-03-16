@@ -13,13 +13,13 @@ import FormSelectField, {
   SelectOptions,
 } from "@/components/forms/FormSelectFields";
 import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
-import { GETPOSTCATEGORIES } from "@/app/graphl/query/posts/posts";
 import { ADD_POST } from "@/app/graphl/mutations/posts/posts";
 import {
   initialValuesOfCreatePost,
   postCreateSchema,
 } from "@/validatorsSchema/posts/create";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { GETPOSTCATEGORIES } from "@/app/graphl/query/posts/posts";
 
 const CreatePost = () => {
   const router = useRouter();
