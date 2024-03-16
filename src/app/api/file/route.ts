@@ -5,8 +5,8 @@
 //   return NextResponse.json({ name: "File Uploaded" });
 // }
 
-import { NextRequest, NextResponse } from "next/server";
+// import { NextRequest, NextResponse } from "next/server";
 
-export default async function handler(req: NextRequest, res: NextResponse) {
-  return NextResponse.json({ name: "File Uploaded" });
-}
+// export default async function handler(req: NextRequest, res: NextResponse) {
+//   return NextResponse.json({ name: "File Uploaded" });
+// }
