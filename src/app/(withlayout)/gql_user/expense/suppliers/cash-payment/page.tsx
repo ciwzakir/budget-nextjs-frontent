@@ -27,7 +27,7 @@ import { getUserInfo } from "@/app/auth/auth.service";
 const { RangePicker } = DatePicker;
 const { userRole: role } = getUserInfo() as any;
 
-const ChequeListPage = () => {
+const CashPage = () => {
   const { data, isError, isLoading } = useCashListWithFilterQuery(undefined);
   const dataColumns = [
     {
@@ -320,4 +320,4 @@ const ChequeListPage = () => {
   );
 };
 
-export default ChequeListPage;
+export default CashPage;
